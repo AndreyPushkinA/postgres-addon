@@ -1,0 +1,22 @@
+{
+  "name": "PostgreSQL",
+  "version": "1.0.0",
+  "slug": "postgres",
+  "description": "PostgreSQL database for Home Assistant",
+  "arch": ["aarch64", "amd64", "armhf", "i386"],
+  "auto_uart": false,
+  "map": ["config:rw", "addons:ro"],
+  "options": {
+    "database": "homeassistant",
+    "user": "hassuser",
+    "password": "yourpassword"
+  },
+  "schema": {
+    "database": "str",
+    "user": "str",
+    "password": "str"
+  },
+  "ports": {
+    "5432/tcp": null
+  }
+}
