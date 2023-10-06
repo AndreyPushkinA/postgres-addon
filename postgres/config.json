@@ -8,7 +8,7 @@
   "boot": "auto",
   "options": {
     "databases": ["homeassistant"],
-    "logins": [{ "username": "homeassistant", "password": null }],
+    "logins": [{ "username": "homeassistant", "password": homeassistant }],
     "rights": [
       {
         "username": "homeassistant",
