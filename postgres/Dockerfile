@@ -7,5 +7,6 @@ WORKDIR /
 COPY initdb/01_init.sh ./docker-entrypoint-initdb.d
 
 RUN chmod a+x ./docker-entrypoint-initdb.d/01_init.sh
+RUN chmod +rw /data/options.json
 RUN apt-get update
 RUN apt-get -y install jq
