@@ -19,9 +19,9 @@
     "5432/tcp": "PostgreSQL database port, expose this if you need to access outside of Home Assistant"
   },
   "options": {
-    "user": "username",
-    "password": "password",
-    "database": "databasename"
+    "user": "homeassistant",
+    "password": "homeassistant",
+    "database": "homeassistant"
   },
   "schema": {
     "user": "str",
