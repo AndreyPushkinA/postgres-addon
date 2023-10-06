@@ -1,22 +1,40 @@
-{
-  "name": "PostgreSQL",
-  "version": "1.0.0",
-  "slug": "postgres",
-  "description": "PostgreSQL database for Home Assistant",
-  "arch": ["aarch64", "amd64", "armhf", "i386"],
-  "auto_uart": false,
-  "map": ["config:rw", "addons:ro"],
-  "options": {
-    "database": "homeassistant",
-    "user": "hassuser",
-    "password": "yourpassword"
-  },
-  "schema": {
-    "database": "str",
-    "user": "str",
-    "password": "str"
-  },
-  "ports": {
-    "5432/tcp": null
-  }
-}
+version: 2.6.1
+slug: postgresql
+name: PostgreSQL
+description: An advanced open source relational database.
+url: https://github.com/AndreyPushkinA/postgress-addon
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+backup_post: pg_unlock_tables
+backup_pre: pg_lock_tables
+init: false
+options:
+  databases:
+    - homeassistant
+  logins:
+    - password: homeassistant
+      username: homeassistant
+  rights:
+    - database: homeassistant
+      username: homeassistant
+ports:
+  5432: 5432
+schema:
+  databases:
+    - str
+  logins:
+    - username: str
+      password: password
+  rights:
+    - database: str
+      privileges:
+        - "list(CONNECT|CREATE|TEMPORARY|EXECUTE|READ|WRITE)?"
+      username: str
+services:
+  - postgresql:provide
+startup: system
+timeout: 20
