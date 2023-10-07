@@ -4,8 +4,7 @@
   "slug": "postgres",
   "description": "PostgreSQL database for Home Assistant",
   "arch": ["aarch64", "amd64", "armhf", "i386"],
-  "auto_uart": false,
-  "map": ["config:rw", "addons:ro"],
+  "init": false,
   "options": {
     "database": "homeassistant",
     "user": "homeassistant",
